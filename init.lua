@@ -16,3 +16,12 @@ function pbmarks.log(lvl, msg)
 		core.log(lvl, msg)
 	end
 end
+
+
+local scripts = {
+	"settings",
+}
+
+for _, scr in ipairs(scripts) do
+	dofile(pbmarks.modpath .. "/" .. scr .. ".lua")
+end
