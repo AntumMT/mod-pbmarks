@@ -1,7 +1,7 @@
 
 pbmarks = {}
 pbmarks.modname = core.get_current_modname()
-pbmarsk.modpath = core.get_modpath(pbmarks.modname)
+pbmarks.modpath = core.get_modpath(pbmarks.modname)
 
 function pbmarks.log(lvl, msg)
 	if not msg then
