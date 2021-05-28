@@ -20,6 +20,7 @@ end
 
 local scripts = {
 	"settings",
+	"api",
 }
 
 for _, scr in ipairs(scripts) do
