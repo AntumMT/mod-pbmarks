@@ -8,7 +8,8 @@ A [Minetest][] mod that allows players to create a limited number of personal bo
 
 ### Licensing:
 
-- [MIT](LICENSE.txt)
+- Code: [MIT](LICENSE.txt)
+- Textures: CC0
 
 ### Usage:
 

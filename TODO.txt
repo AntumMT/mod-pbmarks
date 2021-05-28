@@ -1,5 +1,4 @@
 
 TODO:
-- add icon for sfinv_buttons
 - fix labels so "z" coordinate is shown
 - add a "back" button
