@@ -37,3 +37,52 @@ function pbmarks.get_formspec(pname)
 
 	return formspec
 end
+
+
+core.register_on_player_receive_fields(function(player, formname, fields)
+	if formname == pbmarks.modname then
+		local idx
+		local go = false
+		local set = false
+		for x = 1, pbmarks.max do
+			if fields["btn_go" .. tostring(x)] then
+				go = true
+				idx = x
+			elseif fields["btn_set" .. tostring(x)] then
+				set = true
+				idx = x
+			end
+
+			if idx then break end
+		end
+
+		local pname = player:get_player_name()
+		local pbm = pbmarks.get(pname, idx) or {}
+
+		if go then
+			if not pbm.pos then
+				core.chat_send_player(pname, "This bookmark is not set.")
+				return
+			end
+
+			core.close_formspec(pname, pbmarks.modname)
+
+			pbm.pos.y = pbm.pos.y + 0.5 -- make sure we don't get stuck in the ground
+			player:set_pos(pbm.pos)
+		elseif set then
+			local label = (fields["input" .. tostring(idx)] or ""):trim()
+			if label == "" then
+				core.chat_send_player(pname, "You must choose a label to set this bookmark")
+				return
+			end
+
+			local pos = player:get_pos()
+			pos.x = math.floor(pos.x)
+			pos.y = math.floor(pos.y)
+			pos.z = math.floor(pos.z)
+
+			pbmarks.set(pname, idx, label, pos)
+			pbmarks.show_formspec(pname)
+		end
+	end
+end)
