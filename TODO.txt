@@ -1,2 +1,4 @@
 
 TODO:
+- resize formspec dependent on number of allowed bookmarks
+- increase maximum to 7 but keep default at 5
