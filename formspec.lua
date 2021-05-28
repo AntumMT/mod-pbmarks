@@ -20,7 +20,7 @@ function pbmarks.get_formspec(pname)
 		local label = pbm.label or ""
 		local pos = pbm.pos or ""
 		if type(pos) == "table" then
-			pos = tostring(pos.x) .. "," .. tostring(pos.y) .. "," tostring(pos.z)
+			pos = tostring(pos.x) .. "," .. tostring(pos.y) .. "," .. tostring(pos.z)
 		end
 
 		local fname = "input" .. tostring(idx)
