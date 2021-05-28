@@ -11,6 +11,7 @@ function pbmarks.get_formspec(pname)
 
 	local formspec = "formspec_version[4]"
 		.. "size[" .. tostring(width) .. "," .. tostring(height) .. "]"
+		.. "button[0.5,0.25;1.5,0.75;btn_back;Back]"
 		.. "label[" .. tostring(title_x) .. ",0.5;" .. title .. "]"
 
 	local init_y = 1.5 -- horizontal position of first bookmark
@@ -41,6 +42,11 @@ end
 
 core.register_on_player_receive_fields(function(player, formname, fields)
 	if formname == pbmarks.modname then
+		if fields.btn_back then
+			core.show_formspec(player:get_player_name(), "", player:get_inventory_formspec())
+			return
+		end
+
 		local idx
 		local go = false
 		local set = false
