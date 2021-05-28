@@ -16,3 +16,7 @@ function pbmarks.write(pname, marks)
 	data[pname] = marks
 	wdata.write(pbmarks.modname, data)
 end
+
+function pbmarks.show_formspec(pname)
+	core.show_formspec(pname, pbmarks.modname, pbmarks.get_formspec(pbmarks.read(pname)))
+end

@@ -21,6 +21,7 @@ end
 local scripts = {
 	"settings",
 	"api",
+	"formspec",
 }
 
 for _, scr in ipairs(scripts) do
