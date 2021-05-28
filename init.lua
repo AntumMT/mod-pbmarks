@@ -22,6 +22,7 @@ local scripts = {
 	"settings",
 	"api",
 	"formspec",
+	"ui",
 }
 
 for _, scr in ipairs(scripts) do
