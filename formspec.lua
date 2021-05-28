@@ -5,9 +5,7 @@ local height = 8
 local title = "Personal Bookmarks"
 
 
-function pbmarks.get_formspec(marks)
-	marks = marks or {}
-
+function pbmarks.get_formspec(pname)
 	-- somewhat center title
 	local title_x = math.floor(width / 2) - (math.floor(string.len(title)) / 10)
 
@@ -17,9 +15,12 @@ function pbmarks.get_formspec(marks)
 
 	local init_y = 1.5 -- horizontal position of first bookmark
 	for idx = 1, pbmarks.max do
-		local bmdata = marks[idx] or {}
-		local label = bmdata.lable or ""
-		local pos = bmdata.pos or ""
+		local pbm = pbmarks.get(pname, idx) or {}
+		local label = pbm.label or ""
+		local pos = pbm.pos or ""
+		if type(pos) == "table" then
+			pos = tostring(pos.x) .. "," .. tostring(pos.y) .. "," tostring(pos.z)
+		end
 
 		local fname = "input" .. tostring(idx)
 		local btn_go = "btn_go" .. tostring(idx)
@@ -27,7 +28,7 @@ function pbmarks.get_formspec(marks)
 		formspec = formspec
 			.. "field[0.5," .. tostring(init_y) .. ";3,0.75;" .. fname .. ";;" .. label .. "]"
 			.. "field_close_on_enter[" .. fname .. ";false]"
-			.. "label[3.75," .. tostring(init_y) + 0.25 .. ";" .. pos .. "]"
+			.. "label[3.75," .. tostring(init_y) + 0.25 .. ";" .. core.formspec_escape(pos) .. "]"
 			.. "button[6.25," .. tostring(init_y) .. ";1.5,0.75;" .. btn_go .. ";Go]" -- TODO: change to "button_exit"
 			.. "button[8," .. tostring(init_y) .. ";1.5,0.75;" .. btn_set .. ";Set]"
 
