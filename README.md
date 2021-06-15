@@ -1,10 +1,12 @@
 ## Personal Bookmarks
 
+<img src="icon.png" alt="icon" width="100px" />
+
 ### Description:
 
 A [Minetest][] mod that allows players to create a limited number of personal bookmarks to where they can teleport.
 
-<img src="icon.png" alt="icon" width="100px" />
+![screenshot](screenshot.png)
 
 ### Licensing:
 
