@@ -34,11 +34,17 @@ A [Minetest][] mod that allows players to create a limited number of personal bo
   - min:     1
   - max:     5
   - default: 5
+
+- pbmarks.disallow_protected
+  - don't allow bookmarks to be set in areas not accessible to player (requires protection mod, currently only simple_protection supported)
+  - type:    bool
+  - default: true
 ```
 
 ### Requirements:
 
 - Depends: [wdata](https://content.minetest.net/packages/AntumDeluge/wdata/), [sfinv_buttons](https://content.minetest.net/packages/Wuzzy/sfinv_buttons/)
+- Optional depends: [simple_protection](https://content.minetest.net/packages/Krock/simple_protection/)
 
 ### Links:
 
