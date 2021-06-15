@@ -1,0 +1,10 @@
+Translated by:
+
+
+Personal Bookmarks=
+Back=
+Go=
+Set=
+This bookmark is not set.=
+You must choose a label to set this bookmark.=
+You cannot set bookmarks in areas owned by @1.=

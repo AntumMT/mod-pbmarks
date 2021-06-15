@@ -1,8 +1,10 @@
 
+local S = core.get_translator(pbmarks.modname)
+
 local width = 10
 local height = 8
 
-local title = "Personal Bookmarks"
+local title = S("Personal Bookmarks")
 
 
 function pbmarks.get_formspec(pname)
@@ -11,7 +13,7 @@ function pbmarks.get_formspec(pname)
 
 	local formspec = "formspec_version[4]"
 		.. "size[" .. tostring(width) .. "," .. tostring(height) .. "]"
-		.. "button[0.5,0.25;1.5,0.75;btn_back;Back]"
+		.. "button[0.5,0.25;1.5,0.75;btn_back;" .. S("Back") .. "]"
 		.. "label[" .. tostring(title_x) .. ",0.5;" .. title .. "]"
 
 	local init_y = 1.5 -- horizontal position of first bookmark
@@ -30,8 +32,8 @@ function pbmarks.get_formspec(pname)
 			.. "field[0.5," .. tostring(init_y) .. ";3,0.75;" .. fname .. ";;" .. label .. "]"
 			.. "field_close_on_enter[" .. fname .. ";false]"
 			.. "label[3.75," .. tostring(init_y) + 0.25 .. ";" .. core.formspec_escape(pos) .. "]"
-			.. "button[6.25," .. tostring(init_y) .. ";1.5,0.75;" .. btn_go .. ";Go]" -- TODO: change to "button_exit"
-			.. "button[8," .. tostring(init_y) .. ";1.5,0.75;" .. btn_set .. ";Set]"
+			.. "button[6.25," .. tostring(init_y) .. ";1.5,0.75;" .. btn_go .. ";" .. S("Go") .. "]"
+			.. "button[8," .. tostring(init_y) .. ";1.5,0.75;" .. btn_set .. ";" .. S("Set") .. "]"
 
 		init_y = init_y + 1.25
 	end
@@ -67,7 +69,7 @@ core.register_on_player_receive_fields(function(player, formname, fields)
 
 		if go then
 			if not pbm.pos then
-				core.chat_send_player(pname, "This bookmark is not set.")
+				core.chat_send_player(pname, S("This bookmark is not set."))
 				return
 			end
 
@@ -78,7 +80,7 @@ core.register_on_player_receive_fields(function(player, formname, fields)
 		elseif set then
 			local label = (fields["input" .. tostring(idx)] or ""):trim()
 			if label == "" then
-				core.chat_send_player(pname, "You must choose a label to set this bookmark")
+				core.chat_send_player(pname, S("You must choose a label to set this bookmark."))
 				return
 			end
 

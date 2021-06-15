@@ -1,4 +1,6 @@
 
+local S = core.get_translator(pbmarks.modname)
+
 -- initialize bookmarks
 local bookmarks = wdata.read("personal_bookmarks") or {}
 
@@ -24,7 +26,7 @@ end
 function pbmarks.set(pname, idx, label, pos)
 	-- check for protection
 	if pbmarks.disallow_protected and not can_access(pos, pname) then
-		core.chat_send_player(pname, "You cannot set bookmarks in areas owned by " .. get_owner(pos) .. ".")
+		core.chat_send_player(pname, S("You cannot set bookmarks in areas owned by @1.", get_owner(pos)))
 		return
 	end
 
