@@ -5,3 +5,4 @@ TODO:
 - support protection mods (don't allow bookmarks to be set in protected areas that player can't access)
 	- areas
 	- simple_protection
+- make "set" button unset if description is empty
