@@ -25,6 +25,17 @@ A [Minetest][] mod that allows players to create a limited number of personal bo
 - press "Go" to teleport to location
 ```
 
+#### Settings:
+
+```
+- pbmarks.max
+  - number of allowed bookmarks
+  - type:    int
+  - min:     1
+  - max:     5
+  - default: 5
+```
+
 ### Requirements:
 
 - Depends: [wdata](https://content.minetest.net/packages/AntumDeluge/wdata/), [sfinv_buttons](https://content.minetest.net/packages/Wuzzy/sfinv_buttons/)
