@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Personal Bookmarks</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>pbmarks</h1>
+
+
+<ul>
+  <li><a href="../api.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Tables">Tables</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><strong>api.lua</strong></li>
+  <li><a href="../modules/formspec.lua.html">formspec.lua</a></li>
+  <li><a href="../modules/settings.lua.html">settings.lua</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>api.lua</code></h1>
+<p>Personal Bookmarks API</p>
+<p>
+
+</p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#pbmarks.get">pbmarks.get (pname, idx)</a></td>
+	<td class="summary">Retrieves a bookmark.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#pbmarks.set">pbmarks.set (pname, idx, label, pos)</a></td>
+	<td class="summary">Sets bookmark information.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#pbmarks.unset">pbmarks.unset (pname, idx)</a></td>
+	<td class="summary">Unsets bookmark information.</td>
+	</tr>
+</table>
+<h2><a href="#Tables">Tables</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#BookmarkTable">BookmarkTable</a></td>
+	<td class="summary">Bookmark table.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "pbmarks.get"></a>
+    <strong>pbmarks.get (pname, idx)</strong>
+    </dt>
+    <dd>
+    Retrieves a bookmark.
+
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">pname</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         Player name referenced for bookmark.
+        </li>
+        <li><span class="parameter">idx</span>
+            <span class="types"><span class="type">int</span></span>
+         Index of bookmark to retrieve.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+        <a href="../modules/api.lua.html#BookmarkTable">BookmarkTable</a>.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "pbmarks.set"></a>
+    <strong>pbmarks.set (pname, idx, label, pos)</strong>
+    </dt>
+    <dd>
+    Sets bookmark information.
+
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">pname</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         Player name referenced for bookmark.
+        </li>
+        <li><span class="parameter">idx</span>
+            <span class="types"><span class="type">int</span></span>
+         Index of bookmark to be set.
+        </li>
+        <li><span class="parameter">label</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         Label used to identify bookmark.
+        </li>
+        <li><span class="parameter">pos</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Position to be bookmarked.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "pbmarks.unset"></a>
+    <strong>pbmarks.unset (pname, idx)</strong>
+    </dt>
+    <dd>
+    Unsets bookmark information.
+
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">pname</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         Player name referenced for bookmark.
+        </li>
+        <li><span class="parameter">idx</span>
+            <span class="types"><span class="type">int</span></span>
+         Index of bookmark to be unset.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Tables"></a>Tables</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "BookmarkTable"></a>
+    <strong>BookmarkTable</strong>
+    </dt>
+    <dd>
+    Bookmark table.
+
+    </ul>
+    </ul>
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">label</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         Label used to identify bookmark.
+        </li>
+        <li><span class="parameter">pos</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Position table with x,y,z coordinates (example: <em>pos = {x=7, y=8, z=-12}</em>).
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2021-06-15 16:55:47 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
