@@ -6,3 +6,5 @@ TODO:
 	- areas
 	- simple_protection
 - make "set" button unset if description is empty
+- add localization support
+- add Lua documentation
