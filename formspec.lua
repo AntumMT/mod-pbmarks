@@ -4,17 +4,12 @@ local S = core.get_translator(pbmarks.modname)
 local width = 10
 local height = 8
 
-local title = S("Personal Bookmarks")
-
 
 function pbmarks.get_formspec(pname)
-	-- somewhat center title
-	local title_x = math.floor(width / 2) - (math.floor(string.len(title)) / 10)
-
 	local formspec = "formspec_version[4]"
 		.. "size[" .. tostring(width) .. "," .. tostring(height) .. "]"
 		.. "button[0.5,0.25;1.5,0.75;btn_back;" .. S("Back") .. "]"
-		.. "label[" .. tostring(title_x) .. ",0.5;" .. title .. "]"
+		.. "label[2.25,0.65;" .. S("Personal Bookmarks") .. "]"
 
 	local init_y = 1.5 -- horizontal position of first bookmark
 	for idx = 1, pbmarks.max do
