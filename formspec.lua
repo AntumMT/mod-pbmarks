@@ -45,6 +45,13 @@ function pbmarks.get_formspec(pname)
 	return formspec
 end
 
+--- Displays formspec for managing bookmarks.
+--
+--  @tparam string pname Player name referenced for bookmarks & who will be shown formspec.
+function pbmarks.show_formspec(pname)
+	core.show_formspec(pname, pbmarks.modname, pbmarks.get_formspec(pname))
+end
+
 
 core.register_on_player_receive_fields(function(player, formname, fields)
 	if formname == pbmarks.modname then

@@ -81,13 +81,6 @@ function pbmarks.unset(pname, idx)
 	update_pbmfile()
 end
 
---- Displays formspec for managing bookmarks.
---
---  @tparam string pname Player name referenced for bookmarks & who will be shown formspec.
-function pbmarks.show_formspec(pname)
-	core.show_formspec(pname, pbmarks.modname, pbmarks.get_formspec(pname))
-end
-
 
 --- Bookmark table.
 --
