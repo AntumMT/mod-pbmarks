@@ -16,6 +16,15 @@ A [Minetest][] mod that allows players to create a limited number of personal bo
 
 ### Usage:
 
+```
+- open inventory
+- select "More" tab
+- select "Personal Bookmarks"
+- input a description into text field
+- press "Set" to store location
+- press "Got" to teleport to location
+```
+
 ### Requirements:
 
 - Depends: [wdata](https://content.minetest.net/packages/AntumDeluge/wdata/), [sfinv_buttons](https://content.minetest.net/packages/Wuzzy/sfinv_buttons/)
