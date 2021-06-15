@@ -75,7 +75,15 @@ core.register_on_player_receive_fields(function(player, formname, fields)
 		elseif set then
 			local label = (fields["input" .. tostring(idx)] or ""):trim()
 			if label == "" then
-				core.chat_send_player(pname, S("You must choose a label to set this bookmark."))
+				-- unset
+				if pbm.pos then
+					pbmarks.unset(pname, idx)
+					core.chat_send_player(pname, S("Unset bookmark at @1,@2,@3.", pbm.pos.x, pbm.pos.y, pbm.pos.z))
+					pbmarks.show_formspec(pname)
+				else
+					core.chat_send_player(pname, S("You must choose a label to set this bookmark."))
+				end
+
 				return
 			end
 

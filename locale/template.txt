@@ -8,3 +8,4 @@ Set=
 This bookmark is not set.=
 You must choose a label to set this bookmark.=
 You cannot set bookmarks in areas owned by @1.=
+Unset bookmark at @1,@2,@3.=

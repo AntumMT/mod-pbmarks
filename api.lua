@@ -4,6 +4,10 @@ local S = core.get_translator(pbmarks.modname)
 -- initialize bookmarks
 local bookmarks = wdata.read("personal_bookmarks") or {}
 
+local function update_pbmfile()
+	wdata.write("personal_bookmarks", bookmarks)
+end
+
 local function can_access(pos, pname) return true end
 local function get_owner(pos) return "" end
 
@@ -39,7 +43,25 @@ function pbmarks.set(pname, idx, label, pos)
 	}
 
 	bookmarks[pname] = pbm
-	wdata.write("personal_bookmarks", bookmarks)
+	update_pbmfile()
+end
+
+
+function pbmarks.unset(pname, idx)
+	if not idx or idx < 1 or idx > pbmarks.max then
+		pbmarks.log("error", "cannot unset bookmark, invalid index: " .. tostring(idx))
+		return
+	end
+
+	local pbm = bookmarks[pname]
+	if not pbm then
+		pbmarks.log("error", "cannot unset bookmark, player not found: " .. pname)
+		return
+	end
+
+	pbm[idx] = nil
+	bookmarks[pname] = pbm
+	update_pbmfile()
 end
 
 
