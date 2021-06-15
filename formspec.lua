@@ -1,10 +1,19 @@
 
+--- Personal Bookmarks Formspec
+--
+--  @module formspec.lua
+
+
 local S = core.get_translator(pbmarks.modname)
 
 local width = 10
 local height = 8
 
 
+--- Retrieves formspec formatted string for this mod.
+--
+--  @tparam string pname Player name referenced for bookmarks.
+--  @treturn string Formatted string.
 function pbmarks.get_formspec(pname)
 	local formspec = "formspec_version[4]"
 		.. "size[" .. tostring(width) .. "," .. tostring(height) .. "]"

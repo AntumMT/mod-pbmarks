@@ -1,4 +1,9 @@
 
+--- Personal Bookmarks API
+--
+--  @module api.lua
+
+
 local S = core.get_translator(pbmarks.modname)
 
 -- initialize bookmarks
@@ -21,12 +26,21 @@ if core.global_exists("s_protect") then
 	end
 end
 
-
+--- Retrieves a bookmark.
+--
+--  @tparam string pname Player name referenced for bookmark.
+--  @tparam int idx Index of bookmark to retrieve.
+--  @treturn table `BookmarkTable`.
 function pbmarks.get(pname, idx)
 	return (bookmarks[pname] or {})[idx]
 end
 
-
+--- Sets bookmark information.
+--
+--  @tparam string pname Player name referenced for bookmark.
+--  @tparam int idx Index of bookmark to be set.
+--  @tparam string label Label used to identify bookmark.
+--  @tparam table pos Position to be bookmarked.
 function pbmarks.set(pname, idx, label, pos)
 	-- check for protection
 	if pbmarks.disallow_protected and not can_access(pos, pname) then
@@ -46,7 +60,10 @@ function pbmarks.set(pname, idx, label, pos)
 	update_pbmfile()
 end
 
-
+--- Unsets bookmark information.
+--
+--  @tparam string pname Player name referenced for bookmark.
+--  @tparam int idx Index of bookmark to be unset.
 function pbmarks.unset(pname, idx)
 	if not idx or idx < 1 or idx > pbmarks.max then
 		pbmarks.log("error", "cannot unset bookmark, invalid index: " .. tostring(idx))
@@ -64,7 +81,16 @@ function pbmarks.unset(pname, idx)
 	update_pbmfile()
 end
 
-
+--- Displays formspec for managing bookmarks.
+--
+--  @tparam string pname Player name referenced for bookmarks & who will be shown formspec.
 function pbmarks.show_formspec(pname)
 	core.show_formspec(pname, pbmarks.modname, pbmarks.get_formspec(pname))
 end
+
+
+--- Bookmark table.
+--
+--  @table BookmarkTable
+--  @tfield string label Label used to identify bookmark.
+--  @tfield table pos Position table with x,y,z coordinates (example: *pos = {x=7, y=8, z=-12}*).

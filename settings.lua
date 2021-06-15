@@ -1,4 +1,9 @@
 
+--- Personal Bookmarks Settings
+--
+--  @module settings.lua
+
+
 --- Number of allowed bookmarks.
 --
 --  - min: 1
