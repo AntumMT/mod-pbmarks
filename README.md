@@ -4,10 +4,13 @@
 
 A [Minetest][] mod that allows players to create a limited number of personal bookmarks to where they can teleport.
 
+<img src="icon.png" alt="icon" width="100px" />
+
 ### Licensing:
 
 - Code: [MIT](LICENSE.txt)
 - Textures: CC0
+- Icon: [CC0](https://openclipart.org/detail/266815)
 
 ### Usage:
 
