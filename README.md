@@ -22,7 +22,7 @@ A [Minetest][] mod that allows players to create a limited number of personal bo
 - select "Personal Bookmarks"
 - input a description into text field
 - press "Set" to store location
-- press "Got" to teleport to location
+- press "Go" to teleport to location
 ```
 
 ### Requirements:
