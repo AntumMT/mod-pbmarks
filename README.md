@@ -13,6 +13,8 @@ A [Minetest][] mod that allows players to create a limited number of personal bo
 
 ### Requirements:
 
+- Depends: [wdata](https://content.minetest.net/packages/AntumDeluge/wdata/), [sfinv_buttons](https://content.minetest.net/packages/Wuzzy/sfinv_buttons/)
+
 ### Links:
 
 - [Forum](https://forum.minetest.net/viewtopic.php?t=26805)
