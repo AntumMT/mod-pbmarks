@@ -48,6 +48,7 @@ A [Minetest][] mod that allows players to create a limited number of personal bo
 
 ### Links:
 
+- [![ContentDB](https://content.minetest.net/packages/AntumDeluge/pbmarks/shields/title/)](https://content.minetest.net/packages/AntumDeluge/pbmarks/)
 - [Forum](https://forum.minetest.net/viewtopic.php?t=26805)
 - [Git repo](https://github.com/AntumMT/mod-pbmarks)
 - [API](https://antummt.github.io/mod-pbmarks/docs/api.html)
