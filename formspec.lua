@@ -6,18 +6,47 @@
 
 local S = core.get_translator(pbmarks.modname)
 
-local width = 10
-local height = 8
-
 
 --- Retrieves formspec formatted string for this mod.
 --
+--  Usable flags:
+--
+--    - version (number) formspec version (default: 4)
+--    - noversion (boolean) no formspec version (overrides "version")
+--    - width (number) formspec width
+--    - height (number) formspec height
+--    - noback (boolean) disable "back" button
+--
 --  @tparam string pname Player name referenced for bookmarks.
+--  @tparam table flags Custom flags to set for formspec layout.
 --  @treturn string Formatted string.
-function pbmarks.get_formspec(pname)
-	local formspec = "formspec_version[4]"
-		.. "size[" .. tostring(width) .. "," .. tostring(height) .. "]"
+function pbmarks.get_formspec(pname, flags)
+	flags = flags or {}
+	if not flags.version then
+		flags.version = 4
+	end
+	if not flags.width then
+		flags.width = 10
+	end
+	if not flags.height then
+		flags.height = 8
+	end
+
+	local formspec = ""
+
+	if not flags.noversion then
+		formspec = "formspec_version[" .. flags.version .. "]"
+	end
+
+	formspec = formspec
+		.. "size[" .. tostring(flags.width) .. "," .. tostring(flags.height) .. "]"
+
+	if not flags.noback then
+		formspec = formspec
 		.. "button[0.5,0.25;1.5,0.75;btn_back;" .. S("Back") .. "]"
+	end
+
+	formspec = formspec
 		.. "label[2.25,0.65;" .. S("Personal Bookmarks") .. "]"
 
 	local init_y = 1.5 -- horizontal position of first bookmark
