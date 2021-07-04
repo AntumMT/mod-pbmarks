@@ -22,6 +22,7 @@ local scripts = {
 	"settings",
 	"api",
 	"formspec",
+	"chat",
 	"ui",
 }
 
