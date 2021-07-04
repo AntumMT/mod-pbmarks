@@ -1,4 +1,8 @@
 
+v1.1
+----
+- added unified_inventory support
+
 v1.0
 ----
 - initial release
