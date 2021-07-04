@@ -1,8 +1,9 @@
-Translated by:
+# Translated by:
 
 
 Personal Bookmarks=
 Back=
+Close=
 Go=
 Set=
 This bookmark is not set.=

@@ -15,7 +15,7 @@ local S = core.get_translator(pbmarks.modname)
 --    - noversion (boolean) no formspec version (overrides "version")
 --    - width (number) formspec width
 --    - height (number) formspec height
---    - noback (boolean) disable "back" button
+--    - noback (boolean) show "close" button instead of "back"
 --
 --  @tparam string pname Player name referenced for bookmarks.
 --  @tparam table flags Custom flags to set for formspec layout.
@@ -41,7 +41,10 @@ function pbmarks.get_formspec(pname, flags)
 	formspec = formspec
 		.. "size[" .. tostring(flags.width) .. "," .. tostring(flags.height) .. "]"
 
-	if not flags.noback then
+	if flags.noback then
+		formspec = formspec
+		.. "button_exit[0.5,0.25;1.5,0.75;btn_back;" .. S("Close") .. "]"
+	else
 		formspec = formspec
 		.. "button[0.5,0.25;1.5,0.75;btn_back;" .. S("Back") .. "]"
 	end
