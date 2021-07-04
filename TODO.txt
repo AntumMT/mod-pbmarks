@@ -5,5 +5,4 @@ TODO:
 - add chat command to show formspec in case suppored UI handler not available
 - support protection mods (don't allow bookmarks to be set in protected areas that player can't access)
 	- areas
-- support inventory mods:
-	- i3
+- fix i3 support
