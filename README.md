@@ -17,9 +17,14 @@ A [Minetest][] mod that allows players to create a limited number of personal bo
 ### Usage:
 
 ```
-- open inventory
-- select "More" tab
-- select "Personal Bookmarks"
+- open formspec
+	- sfinv:
+		- select "More" tab
+		- select "Personal Bookmarks"
+	- unified_inventory & i3:
+		- select "Personal Bookmarks" tab
+	- chat command:
+		- /pbmarks
 - input a description into text field
 - press "Set" to store location
 - press "Go" to teleport to location
@@ -44,7 +49,7 @@ A [Minetest][] mod that allows players to create a limited number of personal bo
 ### Requirements:
 
 - Depends: [wdata](https://content.minetest.net/packages/AntumDeluge/wdata/)
-- Optional depends: [sfinv_buttons](https://content.minetest.net/packages/Wuzzy/sfinv_buttons/), [unified_inventory](https://content.minetest.net/packages/RealBadAngel/unified_inventory/), [simple_protection](https://content.minetest.net/packages/Krock/simple_protection/)
+- Optional depends: [sfinv_buttons](https://content.minetest.net/packages/Wuzzy/sfinv_buttons/), [unified_inventory](https://content.minetest.net/packages/RealBadAngel/unified_inventory/), [i3](https://content.minetest.net/packages/jp/i3/), [simple_protection](https://content.minetest.net/packages/Krock/simple_protection/)
 
 ### Links:
 
