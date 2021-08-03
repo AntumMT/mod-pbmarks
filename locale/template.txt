@@ -1,4 +1,6 @@
-# Translated by:
+# textdomain:pbmarks
+
+# Translators:
 
 
 Personal Bookmarks=

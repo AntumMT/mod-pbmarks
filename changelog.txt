@@ -1,9 +1,15 @@
 
+next
+----
+- added "textdomain" line to localization template
+
+
 v1.1
 ----
 - added unified_inventory support
 - added i3 support
 - formspec can be displayed with "pbmarks" chat command
+
 
 v1.0
 ----
