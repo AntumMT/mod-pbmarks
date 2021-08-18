@@ -7,6 +7,9 @@
 local S = core.get_translator(pbmarks.modname)
 
 
+local player_flags = {}
+
+
 --- Retrieves formspec formatted string for this mod.
 --
 --  Usable flags:
@@ -42,6 +45,8 @@ function pbmarks.get_formspec(pname, flags)
 		.. "size[" .. tostring(flags.width) .. "," .. tostring(flags.height) .. "]"
 
 	if flags.noback then
+		player_flags[pname] = {noback=true}
+
 		formspec = formspec
 		.. "button_exit[0.5,0.25;1.5,0.75;btn_back;" .. S("Close") .. "]"
 	else
@@ -88,6 +93,13 @@ end
 
 core.register_on_player_receive_fields(function(player, formname, fields)
 	if formname == pbmarks.modname then
+		local pname = player:get_player_name()
+
+		if fields.quit then
+			player_flags[pname] = nil
+			return
+		end
+
 		if fields.btn_back then
 			core.show_formspec(player:get_player_name(), "", player:get_inventory_formspec())
 			return
@@ -108,7 +120,6 @@ core.register_on_player_receive_fields(function(player, formname, fields)
 			if idx then break end
 		end
 
-		local pname = player:get_player_name()
 		local pbm = pbmarks.get(pname, idx) or {}
 
 		if go then
@@ -128,7 +139,7 @@ core.register_on_player_receive_fields(function(player, formname, fields)
 				if pbm.pos then
 					pbmarks.unset(pname, idx)
 					core.chat_send_player(pname, S("Unset bookmark at @1,@2,@3.", pbm.pos.x, pbm.pos.y, pbm.pos.z))
-					pbmarks.show_formspec(pname)
+					pbmarks.show_formspec(pname, player_flags[pname])
 				else
 					core.chat_send_player(pname, S("You must choose a label to set this bookmark."))
 				end
@@ -142,7 +153,7 @@ core.register_on_player_receive_fields(function(player, formname, fields)
 			pos.z = math.floor(pos.z)
 
 			pbmarks.set(pname, idx, label, pos)
-			pbmarks.show_formspec(pname)
+			pbmarks.show_formspec(pname, player_flags[pname])
 		end
 	end
 end)

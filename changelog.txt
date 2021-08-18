@@ -3,6 +3,7 @@ next
 ----
 - added "textdomain" line to localization template
 - added Spanish translation
+- fixed "Close" button to not change to "Back" when using /pbmarks chat command
 
 
 v1.1
