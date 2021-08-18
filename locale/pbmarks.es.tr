@@ -1,0 +1,15 @@
+# textdomain:pbmarks
+
+# Translators: Jordan Irwin (AntumDeluge)
+
+
+Personal Bookmarks=Marcadores Personales
+Back=Atrás
+Close=Cerrar
+Go=Ir
+Set=Poner
+This bookmark is not set.=No está configurado este marcador.
+You must choose a label to set this bookmark.=Debes escoger una etiqueta para poner este marcador.
+You cannot set bookmarks in areas owned by @1.=No puedes poner marcadores en áreas que posee @1.
+Unset bookmark at @1,@2,@3.=Se desconfiguró el marcador en @1,@2,@3.
+Display personal bookmarks formspec.=Mostrar formspec de marcadores personales.

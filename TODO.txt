@@ -6,4 +6,3 @@ TODO:
 	- areas
 - fix i3 support
 - update for simple_protection API from Git commit 3f34eda
-- add Spanish translation
