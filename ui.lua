@@ -11,15 +11,13 @@ local handler_available = false
 
 
 if core.global_exists("i3") then
-	i3.new_tab({
+	i3.new_tab(S("Закладки"),{
 		name = pbmarks.modname,
-		description = S("Personal Bookmarks"),
-		formspec = function(player, data, fs)
-			-- FIXME:
-			--   - use i3 widgets
-			--   - inventory widgets are missing after close
+		description = S("Закладки"),
+		formspec = function(player, data, fs) end,
+		fields = function(player, data, fields)
 			i3.set_tab(player, "inventory")
-			pbmarks.show_formspec(player:get_player_name(), {noback=true})
+			pbmarks.show_formspec(player:get_player_name(), {noback=false})
 		end,
 	})
 
